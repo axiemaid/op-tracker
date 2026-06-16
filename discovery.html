@@ -37,13 +37,12 @@ h1{text-align:center;margin-bottom:8px;color:#fff;font-size:1.4em}
 <p class="subtitle">Mercari Japan — Sold & Active Listings Quick Links</p>
 <div class="legend">
   <strong>Search Terms Used:</strong>
-  <span><span class="dot" style="background:#e63946"></span><b>Full</b> = カードダス ハイパーバトル + Name + Title</span>
-  <span><span class="dot" style="background:#2d6a4f"></span><b>HB+ID</b> = ハイパーバトル + Card ID</span>
-  <span><span class="dot" style="background:#2d6a4f"></span><b>OP+ID</b> = ワンピース + Card ID</span>
-  <span><span class="dot" style="background:#2d6a4f"></span><b>Name+Title</b> = Character Name + Title (JP)</span>
-  <span><span class="dot" style="background:#2d6a4f"></span><b>HB+Name</b> = ハイパーバトル + Character Name</span>
-  <span>|</span>
-  <span>🔴 = Sold &nbsp; 🟢 = For Sale</span>
+  <span><b>Full</b> = カードダス ハイパーバトル + Name + Title</span>
+  <span><b>HB+ID</b> = ハイパーバトル + Card ID</span>
+  <span><b>OP+ID</b> = ワンピース + Card ID</span>
+  <span><b>Name+Title</b> = Character Name + Title (JP)</span>
+  <span><b>HB+Name</b> = ハイパーバトル + Character Name</span>
+
 </div>
 <div id="app"></div>
 <script>
@@ -64,7 +63,7 @@ function links(c){
   ];
   const soldRow = searches.map(s=>`<a class="primary" href="${m(s.kw,'sold_out')}" target="_blank" title="${s.kw}">${s.label}</a>`).join('');
   const activeRow = searches.map(s=>`<a class="sale" href="${m(s.kw,'on_sale')}" target="_blank" title="${s.kw}">${s.label}</a>`).join('');
-  return `<div class="row-label">🔴 Sold</div><div class="link-row">${soldRow}</div><div class="row-label">🟢 For Sale</div><div class="link-row">${activeRow}</div>`;
+  return `<div class="row-label">Sold</div><div class="link-row">${soldRow}</div><div class="row-label">For Sale</div><div class="link-row">${activeRow}</div>`;
 }
 
 function render(label,list){
