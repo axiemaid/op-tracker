@@ -37,11 +37,12 @@ h1{text-align:center;margin-bottom:8px;color:#fff;font-size:1.4em}
 <p class="subtitle">Mercari Japan — Sold & Active Listings Quick Links</p>
 <div class="legend">
   <strong>Search Terms Used:</strong>
-  <span><b>Full</b> = カードダス ハイパーバトル + Name + Title</span>
-  <span><b>HB+ID</b> = ハイパーバトル + Card ID</span>
-  <span><b>OP+ID</b> = ワンピース + Card ID</span>
-  <span><b>Name+Title</b> = Character Name + Title (JP)</span>
-  <span><b>HB+Name</b> = ハイパーバトル + Character Name</span>
+  <span><b>Full Match</b> = カードダス ハイパーバトル + Name + Title</span>
+  <span><b>HyperBattle ID</b> = ハイパーバトル + Card ID</span>
+  <span><b>OnePiece ID</b> = ワンピース + Card ID</span>
+  <span><b>Name + Title</b> = Character Name + Title (JP)</span>
+  <span><b>HyperBattle Name</b> = ハイパーバトル + Character Name</span>
+  <span><b>Title + 1999</b> = Card Title + Print Year</span>
 
 </div>
 <div id="app"></div>
@@ -55,11 +56,12 @@ function m(kw,status){
 function links(c){
   const id=c.id.toUpperCase();
   const searches=[
-    {label:'Full',kw:`カードダス ハイパーバトル ${c.nj} ${c.tj}`},
-    {label:'HB+ID',kw:`ハイパーバトル ${id}`},
-    {label:'OP+ID',kw:`ワンピース ${id}`},
-    {label:'Name+Title',kw:`${c.nj} ${c.tj}`},
-    {label:'HB+Name',kw:`ハイパーバトル ${c.nj}`},
+    {label:'Full Match',kw:`カードダス ハイパーバトル ${c.nj} ${c.tj}`},
+    {label:'HyperBattle ID',kw:`ハイパーバトル ${id}`},
+    {label:'OnePiece ID',kw:`ワンピース ${id}`},
+    {label:'Name + Title',kw:`${c.nj} ${c.tj}`},
+    {label:'HyperBattle Name',kw:`ハイパーバトル ${c.nj}`},
+    {label:'Title + 1999',kw:`${c.tj} 1999`},
   ];
   const soldRow = searches.map(s=>`<a class="primary" href="${m(s.kw,'sold_out')}" target="_blank" title="${s.kw}">${s.label}</a>`).join('');
   const activeRow = searches.map(s=>`<a class="sale" href="${m(s.kw,'on_sale')}" target="_blank" title="${s.kw}">${s.label}</a>`).join('');
