@@ -1,0 +1,1541 @@
+{
+  "cards": [
+    {
+      "id": "c01",
+      "cardType": "character",
+      "name": {
+        "en": "Luffy",
+        "ja": "ルフィ"
+      },
+      "title": {
+        "en": "Future Pirate King",
+        "ja": "未来の海賊王"
+      },
+      "series": "One Piece Hyper Battle",
+      "set": "First Stage",
+      "released": "November, 1999",
+      "ruleSets": [
+        "All"
+      ],
+      "marks": [
+        "Ｌ"
+      ],
+      "types": [
+        "Pirate"
+      ],
+      "power": 500,
+      "description": {
+        "en": "This card cannot be placed on the field unless the opposing player has a (Pirate) card on the field.",
+        "ja": "他のプレイヤーの場に(海賊)カードが出ていないと、 このカードは場に出せない。"
+      },
+      "flavorText": {
+        "en": "I'm the man who will be king of the pirates!",
+        "ja": "おれは海賊王になる男だ！"
+      },
+      "image": "images/c01.png",
+      "sourceUrl": "https://grandlinewiki.net/tcg/hyperbattle/c01.html"
+    },
+    {
+      "id": "c02",
+      "cardType": "character",
+      "name": {
+        "en": "Luffy",
+        "ja": "ルフィ"
+      },
+      "title": {
+        "en": "Gomu Gomu no Pistol",
+        "ja": "ゴムゴムの銃"
+      },
+      "series": "One Piece Hyper Battle",
+      "set": "First Stage",
+      "released": "November, 1999",
+      "ruleSets": [
+        "All"
+      ],
+      "marks": [
+        "賊",
+        "武",
+        "Ｌ"
+      ],
+      "types": [
+        "Devil Fruit/Skill"
+      ],
+      "power": 250,
+      "description": {
+        "en": "When you put this card onto the field, discard a card from the deck. This card can be put on the field any number of times in the same battle.",
+        "ja": "このカードを場に出すとき、山札からカードを1枚 捨て札にする。このカードは同じ戦闘で何枚でも場に出すことができる。"
+      },
+      "flavorText": {
+        "en": "Look at these skills I've trained for 10 years!",
+        "ja": "10年鍛えたおれの技を見ろ!"
+      },
+      "image": "images/c02.png",
+      "sourceUrl": "https://grandlinewiki.net/tcg/hyperbattle/c02.html"
+    },
+    {
+      "id": "c03",
+      "cardType": "character",
+      "name": {
+        "en": "Luffy",
+        "ja": "ルフィ"
+      },
+      "title": {
+        "en": "Gomu Gomu no Whip",
+        "ja": "ゴムゴムの鞭"
+      },
+      "series": "One Piece Hyper Battle",
+      "set": "First Stage",
+      "released": "November, 1999",
+      "ruleSets": [
+        "All"
+      ],
+      "marks": [
+        "賊",
+        "Ｌ"
+      ],
+      "types": [
+        "Devil Fruit/Skill"
+      ],
+      "power": 150,
+      "description": {
+        "en": "Choose one player. Discard all (Legion) cards in play for that player.",
+        "ja": "プレイヤーを1人指名する。そのプレイヤーの場に出ている(軍団)カードをすべて捨て札にする。"
+      },
+      "flavorText": {
+        "en": "Duck, Zoro!!",
+        "ja": "しゃがめゾロ！！"
+      },
+      "image": "images/c03.png",
+      "sourceUrl": "https://grandlinewiki.net/tcg/hyperbattle/c03.html"
+    },
+    {
+      "id": "c04",
+      "cardType": "character",
+      "name": {
+        "en": "Luffy",
+        "ja": "ルフィ"
+      },
+      "title": {
+        "en": "Aspiring Pirate",
+        "ja": "海賊への憧れ"
+      },
+      "series": "One Piece Hyper Battle",
+      "set": "First Stage",
+      "released": "November, 1999",
+      "ruleSets": [
+        "All"
+      ],
+      "marks": [
+        "賊",
+        "民",
+        "Ｌ"
+      ],
+      "types": [
+        "Others"
+      ],
+      "power": 100,
+      "description": {
+        "en": "Choose 1 (Pirate) card from your discard pile and add it to your hand.",
+        "ja": "自分の捨て札の山にある(海賊)カードを1枚選び、手札に加える。"
+      },
+      "flavorText": {
+        "en": "I will definitely become a pirate!",
+        "ja": "おれは絶対、海賊になってやる!"
+      },
+      "image": "images/c04.png",
+      "sourceUrl": "https://grandlinewiki.net/tcg/hyperbattle/c04.html"
+    },
+    {
+      "id": "c05",
+      "cardType": "character",
+      "name": {
+        "en": "Luffy's Hat",
+        "ja": "ルフィの帽子"
+      },
+      "title": {
+        "en": "Straw Hat",
+        "ja": "麦わら帽子"
+      },
+      "series": "One Piece Hyper Battle",
+      "set": "First Stage",
+      "released": "November, 1999",
+      "ruleSets": [
+        "All"
+      ],
+      "marks": [
+        "賊",
+        "民",
+        "Ｌ"
+      ],
+      "types": [
+        "Item"
+      ],
+      "power": 150,
+      "powerText": "150 &#8594; 300",
+      "description": {
+        "en": "If \"Luffy\" is on your field during the battle phase, the power of this card becomes 300.",
+        "ja": "バトルフェイズにおいて「ルフィ」が自分の場に出 ていれば、このカードのパワーは300になる。"
+      },
+      "flavorText": {
+        "en": "This is my treasure!",
+        "ja": "これはおれの宝物だ!"
+      },
+      "image": "images/c05.png",
+      "sourceUrl": "https://grandlinewiki.net/tcg/hyperbattle/c05.html"
+    },
+    {
+      "id": "c06",
+      "cardType": "character",
+      "name": {
+        "en": "Zoro",
+        "ja": "ゾロ"
+      },
+      "title": {
+        "en": "The Difference in Status",
+        "ja": "格の違い"
+      },
+      "series": "One Piece Hyper Battle",
+      "set": "First Stage",
+      "released": "November, 1999",
+      "ruleSets": [
+        "All"
+      ],
+      "marks": [
+        "剣"
+      ],
+      "types": [
+        "Swordsman/Skill"
+      ],
+      "power": 300,
+      "description": {
+        "en": "No special abilities.",
+        "ja": "特殊能力なし。"
+      },
+      "flavorText": {
+        "en": "Don't do it, you'll die.",
+        "ja": "やめとけ、死ぬぜ"
+      },
+      "image": "images/c06.png",
+      "sourceUrl": "https://grandlinewiki.net/tcg/hyperbattle/c06.html"
+    },
+    {
+      "id": "c07",
+      "cardType": "character",
+      "name": {
+        "en": "Zoro",
+        "ja": "ゾロ"
+      },
+      "title": {
+        "en": "Onigiri",
+        "ja": "鬼斬り"
+      },
+      "series": "One Piece Hyper Battle",
+      "set": "First Stage",
+      "released": "November, 1999",
+      "ruleSets": [
+        "All"
+      ],
+      "marks": [
+        "剣",
+        "Ｌ"
+      ],
+      "types": [
+        "Swordsman/Skill"
+      ],
+      "power": 250,
+      "powerText": "250 &#8594; 400",
+      "description": {
+        "en": "If a (Swordsman) card is on another player's field during the Battle Phase, this card's Power becomes 400.",
+        "ja": "バトルフェイズにおいて(剣士)カードが他のプレ イヤーの場に出ていれば、このカードのパワーは 400になる。"
+      },
+      "flavorText": {
+        "en": "You're a tough son of a bitch",
+        "ja": "手こたえのねェ奴だ"
+      },
+      "image": "images/c07.png",
+      "sourceUrl": "https://grandlinewiki.net/tcg/hyperbattle/c07.html"
+    },
+    {
+      "id": "c08",
+      "cardType": "character",
+      "name": {
+        "en": "Zoro",
+        "ja": "ゾロ"
+      },
+      "title": {
+        "en": "Vow to Kuina",
+        "ja": "くいなへの誓い"
+      },
+      "series": "One Piece Hyper Battle",
+      "set": "First Stage",
+      "released": "November, 1999",
+      "ruleSets": [
+        "All"
+      ],
+      "marks": [
+        "剣",
+        "民",
+        "武"
+      ],
+      "types": [
+        "Swordsman"
+      ],
+      "power": 150,
+      "description": {
+        "en": "If there is a “Kuina” on the field when this card is played, draw 2 cards from the deck.",
+        "ja": "このカードを場に出した時、自分の場に「くいな」 が出ていたら、山札からカードを2枚引く。"
+      },
+      "flavorText": {
+        "en": "I'll be strong for her too!",
+        "ja": "おれ、あいつのぶんも強くなるから!"
+      },
+      "image": "images/c08.png",
+      "sourceUrl": "https://grandlinewiki.net/tcg/hyperbattle/c08.html"
+    },
+    {
+      "id": "c09",
+      "cardType": "character",
+      "name": {
+        "en": "Nami",
+        "ja": "ナミ"
+      },
+      "title": {
+        "en": "Little Devil",
+        "ja": "小悪魔"
+      },
+      "series": "One Piece Hyper Battle",
+      "set": "First Stage",
+      "released": "November, 1999",
+      "ruleSets": [
+        "All"
+      ],
+      "marks": [
+        "知"
+      ],
+      "types": [
+        "Others"
+      ],
+      "power": 100,
+      "description": {
+        "en": "Discard all (Skill) cards on the field. However, you cannot discard (Special) cards.",
+        "ja": "場に出ているすべての(技)カードを捨て札にする。 ただし、(特殊)カードは捨て札にできない。"
+      },
+      "flavorText": {
+        "en": "You're pretty strong, why don't you join me?",
+        "ja": "強いのねあんた、私と手を組まない?"
+      },
+      "image": "images/c09.png",
+      "sourceUrl": "https://grandlinewiki.net/tcg/hyperbattle/c09.html"
+    },
+    {
+      "id": "c10",
+      "cardType": "character",
+      "name": {
+        "en": "Nami",
+        "ja": "ナミ"
+      },
+      "title": {
+        "en": "Risk Perception",
+        "ja": "危険察知"
+      },
+      "series": "One Piece Hyper Battle",
+      "set": "First Stage",
+      "released": "November, 1999",
+      "ruleSets": [
+        "All"
+      ],
+      "marks": [
+        "知",
+        "Ｌ"
+      ],
+      "types": [
+        "Wisdom"
+      ],
+      "power": 100,
+      "description": {
+        "en": "Discard a (Special) card on another player's field.",
+        "ja": "他のプレイヤーの場に出ている(特殊)カード1枚を捨て札にする。"
+      },
+      "flavorText": {
+        "en": "I guess we'd better get the hell out of here",
+        "ja": "ここはさっさと逃げた方が良さそうね"
+      },
+      "image": "images/c10.png",
+      "sourceUrl": "https://grandlinewiki.net/tcg/hyperbattle/c10.html"
+    },
+    {
+      "id": "c11",
+      "cardType": "character",
+      "name": {
+        "en": "Nami",
+        "ja": "ナミ"
+      },
+      "title": {
+        "en": "Bōjutsu",
+        "ja": "棒術"
+      },
+      "series": "One Piece Hyper Battle",
+      "set": "First Stage",
+      "released": "November, 1999",
+      "ruleSets": [
+        "All"
+      ],
+      "marks": [
+        "民",
+        "武",
+        "知"
+      ],
+      "types": [
+        "Skill"
+      ],
+      "power": 200,
+      "description": {
+        "en": "No special abilities.",
+        "ja": "特殊能力なし。"
+      },
+      "flavorText": {
+        "en": "I don't want to be a pirate!",
+        "ja": "私わ海賊と同類にはなりたくないの！"
+      },
+      "image": "images/c11.png",
+      "sourceUrl": "https://grandlinewiki.net/tcg/hyperbattle/c11.html"
+    },
+    {
+      "id": "c12",
+      "cardType": "character",
+      "name": {
+        "en": "Usopp",
+        "ja": "ウソップ"
+      },
+      "title": {
+        "en": "Lead Star",
+        "ja": "鉛星"
+      },
+      "series": "One Piece Hyper Battle",
+      "set": "First Stage",
+      "released": "November, 1999",
+      "ruleSets": [
+        "All"
+      ],
+      "marks": [
+        "賊",
+        "武",
+        "Ｌ"
+      ],
+      "types": [
+        "Skill"
+      ],
+      "power": 100,
+      "description": {
+        "en": "Choose a player other than yourself. That player must discard the top card of the deck.",
+        "ja": "自分以外のブレイヤーを1人指名する。そのプレイヤーは山札の1番上のカードを捨て札にしなけれ ぱならない。"
+      },
+      "flavorText": {
+        "en": "Sure kill! Namari Boshi!!",
+        "ja": "必殺! 鉛星!!"
+      },
+      "image": "images/c12.png",
+      "sourceUrl": "https://grandlinewiki.net/tcg/hyperbattle/c12.html"
+    },
+    {
+      "id": "c13",
+      "cardType": "character",
+      "name": {
+        "en": "Usopp",
+        "ja": "ウソップ"
+      },
+      "title": {
+        "en": "Caltrop Hell",
+        "ja": "まきびし地獄"
+      },
+      "series": "One Piece Hyper Battle",
+      "set": "First Stage",
+      "released": "November, 1999",
+      "ruleSets": [
+        "All"
+      ],
+      "marks": [
+        "賊",
+        "知"
+      ],
+      "types": [
+        "Wisdom"
+      ],
+      "power": 150,
+      "description": {
+        "en": "Any player who puts a (SKill) card on the field after this card is in play discards 1 card from the top of their deck.",
+        "ja": "このカードが場に出た後、(技)カードを場に出したプレイヤーは、山札を1枚捨て札にする。"
+      },
+      "flavorText": {
+        "en": "Take that!",
+        "ja": "これでもくらえっ!"
+      },
+      "image": "images/c13.png",
+      "sourceUrl": "https://grandlinewiki.net/tcg/hyperbattle/c13.html"
+    },
+    {
+      "id": "c14",
+      "cardType": "character",
+      "name": {
+        "en": "Shanks",
+        "ja": "シャンクス"
+      },
+      "title": {
+        "en": "Noble Friendship",
+        "ja": "気高き友情"
+      },
+      "series": "One Piece Hyper Battle",
+      "set": "First Stage",
+      "released": "November, 1999",
+      "ruleSets": [
+        "All"
+      ],
+      "marks": [
+        "賊"
+      ],
+      "types": [
+        "Pirate"
+      ],
+      "power": 600,
+      "description": {
+        "en": "This card cannot be put into play unless your game points are 2 or less.",
+        "ja": "このカードは自分のゲームボイントが2点以下でないと場に出すことができない。"
+      },
+      "flavorText": {
+        "en": "I won't tolerate anyone who hurts my friends!!",
+        "ja": "おれは友達を傷つける奴は許さない!!"
+      },
+      "image": "images/c14.png",
+      "sourceUrl": "https://grandlinewiki.net/tcg/hyperbattle/c14.html"
+    },
+    {
+      "id": "c15",
+      "cardType": "character",
+      "name": {
+        "en": "Beckman",
+        "ja": "ベックマン"
+      },
+      "title": {
+        "en": "The Capable First Mate",
+        "ja": "有能な副官"
+      },
+      "series": "One Piece Hyper Battle",
+      "set": "First Stage",
+      "released": "November, 1999",
+      "ruleSets": [
+        "All"
+      ],
+      "marks": [
+        "賊",
+        "剣"
+      ],
+      "types": [
+        "Pirate/Swordsman"
+      ],
+      "power": 400,
+      "description": {
+        "en": "When you put this card into play, discard 1 card from your hand. If there are no cards that can be discarded, this card cannot be played.",
+        "ja": "このカードを場に出すとき、手札からカードを1枚捨て札にする。捨て札にできるカードがなければ、このカードは場に出せない。"
+      },
+      "flavorText": {
+        "en": "I'll do it..... that's good enough.",
+        "ja": "おれがやろう・・・・・充分だ"
+      },
+      "image": "images/c15.png",
+      "sourceUrl": "https://grandlinewiki.net/tcg/hyperbattle/c15.html"
+    },
+    {
+      "id": "c16",
+      "cardType": "character",
+      "name": {
+        "en": "Kuina",
+        "ja": "くいな"
+      },
+      "title": {
+        "en": "Qualities of a Swordsman",
+        "ja": "剣士の資質"
+      },
+      "series": "One Piece Hyper Battle",
+      "set": "First Stage",
+      "released": "November, 1999",
+      "ruleSets": [
+        "All"
+      ],
+      "marks": [
+        "剣",
+        "民",
+        "武"
+      ],
+      "types": [
+        "Swordsman"
+      ],
+      "power": 150,
+      "description": {
+        "en": "Choose one “Zoro” card from your discard pile and put it on the top of the deck.",
+        "ja": "自分の捨て札の山にある「ゾロ」を1枚選び、山札の1番上に置く。"
+      },
+      "flavorText": {
+        "en": "...I want to be the strongest in the world too!!",
+        "ja": "・・・私だって世界一強くなりたいよ!!"
+      },
+      "image": "images/c16.png",
+      "sourceUrl": "https://grandlinewiki.net/tcg/hyperbattle/c16.html"
+    },
+    {
+      "id": "c17",
+      "cardType": "character",
+      "name": {
+        "en": "Koby",
+        "ja": "コビー"
+      },
+      "title": {
+        "en": "Dream of Being a Marine",
+        "ja": "夢は海軍"
+      },
+      "series": "One Piece Hyper Battle",
+      "set": "First Stage",
+      "released": "November, 1999",
+      "ruleSets": [
+        "All"
+      ],
+      "marks": [
+        "軍",
+        "民",
+        "武"
+      ],
+      "types": [
+        "Marine"
+      ],
+      "power": 150,
+      "powerText": "150 &#8594; 250",
+      "description": {
+        "en": "If a (Pirate) card is on another player's field in the Battle Phase, this card's power becomes 250.",
+        "ja": "バトルフェイズにおいて(海賊)カードが他のプレイヤーの場に出ていれば、このカードのパワーは250になる。"
+      },
+      "flavorText": {
+        "en": "Let's shut down this Marine base!",
+        "ja": "こんな海軍つぶしちゃえェ!"
+      },
+      "image": "images/c17.png",
+      "sourceUrl": "https://grandlinewiki.net/tcg/hyperbattle/c17.html"
+    },
+    {
+      "id": "c18",
+      "cardType": "character",
+      "name": {
+        "en": "Rika",
+        "ja": "リカ"
+      },
+      "title": {
+        "en": "Onigiri",
+        "ja": "おにぎり"
+      },
+      "series": "One Piece Hyper Battle",
+      "set": "First Stage",
+      "released": "November, 1999",
+      "ruleSets": [
+        "All"
+      ],
+      "marks": [
+        "民",
+        "料",
+        "知"
+      ],
+      "types": [
+        "Citizen"
+      ],
+      "power": 50,
+      "description": {
+        "en": "Draw 1 card from the deck and add it to your hand.",
+        "ja": "山札からカードを1枚引き、手札に加える。"
+      },
+      "flavorText": {
+        "en": "Are you hungry big brother?",
+        "ja": "お兄ちゃん、おなか空いてるでしょ?"
+      },
+      "image": "images/c18.png",
+      "sourceUrl": "https://grandlinewiki.net/tcg/hyperbattle/c18.html"
+    },
+    {
+      "id": "c19",
+      "cardType": "character",
+      "name": {
+        "en": "Boodle",
+        "ja": "ブードル"
+      },
+      "title": {
+        "en": "Affection for the Town",
+        "ja": "町への思い"
+      },
+      "series": "One Piece Hyper Battle",
+      "set": "First Stage",
+      "released": "November, 1999",
+      "ruleSets": [
+        "All"
+      ],
+      "marks": [
+        "民",
+        "武",
+        "獣"
+      ],
+      "types": [
+        "Citizen"
+      ],
+      "power": 150,
+      "description": {
+        "en": "During the Lost Phase, if you have a (Citizen) card other than this card on your field, return this card to your hand.",
+        "ja": "ロストフェイズにおいて、自分の場にこのカード以外の(市民)カードが出ていれば、このカードは手札に戻す。"
+      },
+      "flavorText": {
+        "en": "I will protect my town!",
+        "ja": "わしの町はわしが守る!"
+      },
+      "image": "images/c19.png",
+      "sourceUrl": "https://grandlinewiki.net/tcg/hyperbattle/c19.html"
+    },
+    {
+      "id": "c20",
+      "cardType": "character",
+      "name": {
+        "en": "Chouchou",
+        "ja": "シュシュ"
+      },
+      "title": {
+        "en": "Loyal Dog",
+        "ja": "忠犬"
+      },
+      "series": "One Piece Hyper Battle",
+      "set": "First Stage",
+      "released": "November, 1999",
+      "ruleSets": [
+        "All"
+      ],
+      "marks": [
+        "民",
+        "獣"
+      ],
+      "types": [
+        "Citizen/Animal"
+      ],
+      "power": 150,
+      "description": {
+        "en": "(Citizen) cards on your field other than this card cannot be discarded by the abilities of cards played by other players.",
+        "ja": "自分の場に出ている、このカード以外の(市民)カードは、他のプレイヤーの出したカードの能力では捨て札にならない。"
+      },
+      "flavorText": {
+        "en": "......",
+        "ja": "・・・・・・"
+      },
+      "image": "images/c20.png",
+      "sourceUrl": "https://grandlinewiki.net/tcg/hyperbattle/c20.html"
+    },
+    {
+      "id": "c21",
+      "cardType": "character",
+      "name": {
+        "en": "Alvida",
+        "ja": "アルビダ"
+      },
+      "title": {
+        "en": "Fastidious Person",
+        "ja": "キレイ好き"
+      },
+      "series": "One Piece Hyper Battle",
+      "set": "First Stage",
+      "released": "November, 1999",
+      "ruleSets": [
+        "All"
+      ],
+      "marks": [
+        "賊",
+        "知"
+      ],
+      "types": [
+        "Pirate"
+      ],
+      "power": 150,
+      "description": {
+        "en": "Choose a card from your hand and put it on the bottom of the deck. Then draw a card from the deck and add it to your hand.",
+        "ja": "自分の手札からカードを1枚選び、山札の底に置く。その後、山札からカードを1枚引き、手札に加える。"
+      },
+      "flavorText": {
+        "en": "What's the most beautiful thing in this sea?",
+        "ja": "この海で一番美しいものは何だい?"
+      },
+      "image": "images/c21.png",
+      "sourceUrl": "https://grandlinewiki.net/tcg/hyperbattle/c21.html"
+    },
+    {
+      "id": "c22",
+      "cardType": "character",
+      "name": {
+        "en": "Morgan",
+        "ja": "モーガン"
+      },
+      "title": {
+        "en": "Authority",
+        "ja": "権力"
+      },
+      "series": "One Piece Hyper Battle",
+      "set": "First Stage",
+      "released": "November, 1999",
+      "ruleSets": [
+        "All"
+      ],
+      "marks": [
+        "軍",
+        "武"
+      ],
+      "types": [
+        "Marine"
+      ],
+      "power": 150,
+      "description": {
+        "en": "Discard all (Citizen) cards in play. However, (Special) cards cannot be discarded.",
+        "ja": "場に出ているすべての(市民)カードを捨て札にする。ただし、(特殊)カードは捨て札にできない。"
+      },
+      "flavorText": {
+        "en": "Anyone who opposes me will be executed!!",
+        "ja": "おれに逆らう奴ァ全員死刑だァ!!"
+      },
+      "image": "images/c22.png",
+      "sourceUrl": "https://grandlinewiki.net/tcg/hyperbattle/c22.html"
+    },
+    {
+      "id": "c23",
+      "cardType": "character",
+      "name": {
+        "en": "Helmeppo",
+        "ja": "ヘルメッポ"
+      },
+      "title": {
+        "en": "Empty Promise",
+        "ja": "空約束"
+      },
+      "series": "One Piece Hyper Battle",
+      "set": "First Stage",
+      "released": "November, 1999",
+      "ruleSets": [
+        "All"
+      ],
+      "marks": [
+        "軍",
+        "民",
+        "知"
+      ],
+      "types": [
+        "Wisdom"
+      ],
+      "power": 100,
+      "description": {
+        "en": "Discard a (Swordsman) card on another player's field.However, (Special) cards cannot be discarded.",
+        "ja": "他のプレイヤーの場に出ている(剣士)カードを1枚を捨て札にする。ただし特殊カードは捨て札にできない。"
+      },
+      "flavorText": {
+        "en": "Such a promise is a gag, of course!",
+        "ja": "そんな約束、ギャグに決まってんだろ!"
+      },
+      "image": "images/c23.png",
+      "sourceUrl": "https://grandlinewiki.net/tcg/hyperbattle/c23.html"
+    },
+    {
+      "id": "c24",
+      "cardType": "character",
+      "name": {
+        "en": "Buggy",
+        "ja": "バギー"
+      },
+      "title": {
+        "en": "Obsession with Treasure",
+        "ja": "財宝への執念"
+      },
+      "series": "One Piece Hyper Battle",
+      "set": "First Stage",
+      "released": "November, 1999",
+      "ruleSets": [
+        "All"
+      ],
+      "marks": [
+        "賊"
+      ],
+      "types": [
+        "Pirate"
+      ],
+      "power": 300,
+      "powerText": "300S",
+      "description": {
+        "en": "Choose an (Item) card from your deck and immediately put it on the field regardless of its mark. Then, shuffle your deck.",
+        "ja": "山札から(アイテム)カードを1枚選び、マークに関係なく即座に場に出す。その後、山札をよく切る。"
+      },
+      "flavorText": {
+        "en": "That's mine!",
+        "ja": "そいつはおれのモンだ!"
+      },
+      "image": "images/c24.png",
+      "sourceUrl": "https://grandlinewiki.net/tcg/hyperbattle/c24.html"
+    },
+    {
+      "id": "c25",
+      "cardType": "character",
+      "name": {
+        "en": "Buggy",
+        "ja": "バギー"
+      },
+      "title": {
+        "en": "Bara Bara Kinkyu Dasshutsu",
+        "ja": "バラバラ緊急脱出"
+      },
+      "series": "One Piece Hyper Battle",
+      "set": "First Stage",
+      "released": "November, 1999",
+      "ruleSets": [
+        "All"
+      ],
+      "marks": [
+        "賊",
+        "知"
+      ],
+      "types": [
+        "Devil Fruit/Skill"
+      ],
+      "power": 200,
+      "description": {
+        "en": "Return 1 card, other than this card, on your field to your hand.",
+        "ja": "自分の場に出ているこのカード以外のカードを1枚、手札に戻す。"
+      },
+      "flavorText": {
+        "en": "Sweet!",
+        "ja": "甘いわ!"
+      },
+      "image": "images/c25.png",
+      "sourceUrl": "https://grandlinewiki.net/tcg/hyperbattle/c25.html"
+    },
+    {
+      "id": "c26",
+      "cardType": "character",
+      "name": {
+        "en": "Buggy Cannon",
+        "ja": "バギー砲"
+      },
+      "title": {
+        "en": "Cannon",
+        "ja": "大砲"
+      },
+      "series": "One Piece Hyper Battle",
+      "set": "First Stage",
+      "released": "November, 1999",
+      "ruleSets": [
+        "All"
+      ],
+      "marks": [
+        "賊",
+        "武"
+      ],
+      "types": [
+        "Item"
+      ],
+      "power": 150,
+      "powerText": "150 &#8594; 300",
+      "description": {
+        "en": "If “Buggy” is on your field during the Battle Phase when this card is played, this card's power becomes 300.",
+        "ja": "バトルフェイズにおいて「バギー」が自分の場に出ていれば、このカードのパワーは300になる。"
+      },
+      "flavorText": {
+        "en": "Go flashily!!",
+        "ja": "ハデにくらえ!!"
+      },
+      "image": "images/c26.png",
+      "sourceUrl": "https://grandlinewiki.net/tcg/hyperbattle/c26.html"
+    },
+    {
+      "id": "c27",
+      "cardType": "character",
+      "name": {
+        "en": "Mohji",
+        "ja": "モージ"
+      },
+      "title": {
+        "en": "Beast Tamer",
+        "ja": "猛獣使い"
+      },
+      "series": "One Piece Hyper Battle",
+      "set": "First Stage",
+      "released": "November, 1999",
+      "ruleSets": [
+        "All"
+      ],
+      "marks": [
+        "賊",
+        "獣",
+        "武"
+      ],
+      "types": [
+        "Pirate/Wisdom"
+      ],
+      "power": 150,
+      "powerText": "150 &#8594; 250",
+      "description": {
+        "en": "If \"Richie\" is on your field during the Battle Phase, this card's power becomes 250.",
+        "ja": "バトルフェイズにおいて「リッチー」が自分の場に出ていれば、このカードのパワーは250になる。"
+      },
+      "flavorText": {
+        "en": "Tear them apart! Richie!!",
+        "ja": "やれ! リッチー!!"
+      },
+      "image": "images/c27.png",
+      "sourceUrl": "https://grandlinewiki.net/tcg/hyperbattle/c27.html"
+    },
+    {
+      "id": "c28",
+      "cardType": "character",
+      "name": {
+        "en": "Richie",
+        "ja": "リッチー"
+      },
+      "title": {
+        "en": "Lion's Onslaught",
+        "ja": "獅子の猛攻"
+      },
+      "series": "One Piece Hyper Battle",
+      "set": "First Stage",
+      "released": "November, 1999",
+      "ruleSets": [
+        "All"
+      ],
+      "marks": [
+        "賊",
+        "獣",
+        "武"
+      ],
+      "types": [
+        "Animal/Skill"
+      ],
+      "power": 150,
+      "powerText": "150 &#8594; 250",
+      "description": {
+        "en": "If “Mohji” is on your field in the Battle Phase, the power of this card becomes 250.",
+        "ja": "バトルフェイズにおいて「モージ」が自分の場に出ていれば、このカードのパワーは250になる。"
+      },
+      "flavorText": {
+        "en": "Garurrrrr...!",
+        "ja": "ガルルル・・・!"
+      },
+      "image": "images/c28.png",
+      "sourceUrl": "https://grandlinewiki.net/tcg/hyperbattle/c28.html"
+    },
+    {
+      "id": "c29",
+      "cardType": "character",
+      "name": {
+        "en": "Cabaji",
+        "ja": "カバジ"
+      },
+      "title": {
+        "en": "Theater of One HundredKamikaze Tops",
+        "ja": "カミカゼ百コマ劇場"
+      },
+      "series": "One Piece Hyper Battle",
+      "set": "First Stage",
+      "released": "November, 1999",
+      "ruleSets": [
+        "All"
+      ],
+      "marks": [
+        "賊",
+        "剣"
+      ],
+      "types": [
+        "Pirate/Swordsman"
+      ],
+      "power": 250,
+      "description": {
+        "en": "No special abilities.",
+        "ja": "特殊能力なし。"
+      },
+      "flavorText": {
+        "en": "Have a taste of my best acrobatics!!",
+        "ja": "おれの最高の曲技を味わうがいい!!"
+      },
+      "image": "images/c29.png",
+      "sourceUrl": "https://grandlinewiki.net/tcg/hyperbattle/c29.html"
+    },
+    {
+      "id": "c30",
+      "cardType": "character",
+      "name": {
+        "en": "Lord of the Coast",
+        "ja": "近海の主"
+      },
+      "title": {
+        "en": "Dragon's Fang",
+        "ja": "竜の牙"
+      },
+      "series": "One Piece Hyper Battle",
+      "set": "First Stage",
+      "released": "November, 1999",
+      "ruleSets": [
+        "All"
+      ],
+      "marks": [
+        "獣",
+        "武"
+      ],
+      "types": [
+        "Animal/Skill"
+      ],
+      "power": 250,
+      "description": {
+        "en": "No special abilities.",
+        "ja": "特殊能力なし。"
+      },
+      "flavorText": {
+        "en": "Gururrr...!",
+        "ja": "グルルル・・・!"
+      },
+      "image": "images/c30.png",
+      "sourceUrl": "https://grandlinewiki.net/tcg/hyperbattle/c30.html"
+    },
+    {
+      "id": "c31",
+      "cardType": "character",
+      "name": {
+        "en": "Alvida Crew",
+        "ja": "アルビダ一家"
+      },
+      "title": {
+        "en": "Loyalty to the Goddess",
+        "ja": "女神への忠誠"
+      },
+      "series": "One Piece Hyper Battle",
+      "set": "First Stage",
+      "released": "November, 1999",
+      "ruleSets": [
+        "All"
+      ],
+      "marks": [
+        "賊",
+        "民",
+        "武"
+      ],
+      "types": [
+        "Pirate/Battalion"
+      ],
+      "power": 150,
+      "powerText": "150 &#8594; 200",
+      "description": {
+        "en": "You can play any number of this card in the same battle. If “Alvida” is on your field during the Battle Phase, this card's Power becomes 200.",
+        "ja": "このカードは同じ1戦闘で何枚でも場に出せる。バト ルフェイズにおいて「アルビダ」が自分の場に出ていれば、このカードのパワーは200になる。"
+      },
+      "flavorText": {
+        "en": "What has he done to Lady Alvida!",
+        "ja": "こいつ、アルビダ様に何て事を!"
+      },
+      "image": "images/c31.png",
+      "sourceUrl": "https://grandlinewiki.net/tcg/hyperbattle/c31.html"
+    },
+    {
+      "id": "c32",
+      "cardType": "character",
+      "name": {
+        "en": "Morgan Troops",
+        "ja": "モーガン部隊"
+      },
+      "title": {
+        "en": "Complete Submission",
+        "ja": "絶対服従"
+      },
+      "series": "One Piece Hyper Battle",
+      "set": "First Stage",
+      "released": "November, 1999",
+      "ruleSets": [
+        "All"
+      ],
+      "marks": [
+        "軍",
+        "民",
+        "武"
+      ],
+      "types": [
+        "Marine/Battalion"
+      ],
+      "power": 200,
+      "powerText": "200 &#8594; 0",
+      "description": {
+        "en": "You can play any number of this card in the same battle. If “Morgan” is on a field other than yours during the Battle Phase, this card's power becomes 0.",
+        "ja": "このカードは同じ戦闘で何枚でも場に出せる。バトルフェイズにおいて「モーガン」が自分以外の場に出ていれば、このカードのパワーは0になる。"
+      },
+      "flavorText": {
+        "en": "Haa! Of course, Captain!",
+        "ja": "はっ! その通りであります大佐!!"
+      },
+      "image": "images/c32.png",
+      "sourceUrl": "https://grandlinewiki.net/tcg/hyperbattle/c32.html"
+    },
+    {
+      "id": "c33",
+      "cardType": "character",
+      "name": {
+        "en": "Buggy Crew",
+        "ja": "バギー一味"
+      },
+      "title": {
+        "en": "Flashy Combat",
+        "ja": "ハデな戦闘"
+      },
+      "series": "One Piece Hyper Battle",
+      "set": "First Stage",
+      "released": "November, 1999",
+      "ruleSets": [
+        "All"
+      ],
+      "marks": [
+        "賊",
+        "剣",
+        "知"
+      ],
+      "types": [
+        "Pirate/Battalion"
+      ],
+      "power": 150,
+      "powerText": "150 &#8594; 200",
+      "description": {
+        "en": "You can play any number of this card in the same battle. If “Buggy” is on your field during the Battle Phase, this card's Power becomes 200.",
+        "ja": "このカードは同じ1戦闘で何枚でも場に出せる。バト ルフェイズにおいて「バギー」が自分の場に出ていれば、このカードのパワーは200になる。"
+      },
+      "flavorText": {
+        "en": "Let's go flashily!!",
+        "ja": "ハデに行くぜェ!!"
+      },
+      "image": "images/c33.png",
+      "sourceUrl": "https://grandlinewiki.net/tcg/hyperbattle/c33.html"
+    },
+    {
+      "id": "c34",
+      "cardType": "character",
+      "name": {
+        "en": "Red Hair Pirates",
+        "ja": "赤髭海賊団"
+      },
+      "title": {
+        "en": "Brave Men of the Sea",
+        "ja": "海の勇者たち"
+      },
+      "series": "One Piece Hyper Battle",
+      "set": "First Stage",
+      "released": "November, 1999",
+      "ruleSets": [
+        "All"
+      ],
+      "marks": [
+        "賊"
+      ],
+      "types": [
+        "Pirate/Battalion"
+      ],
+      "power": 150,
+      "powerText": "150 &#8594; 300",
+      "description": {
+        "en": "You can play any number of this card in the same battle. If “Shanks” is on your field during the Battle Phase, this card's Power becomes 200.",
+        "ja": "このカードは同じ1戦闘で何枚でも場に出せる。バト ルフェイズにおいて「シャンクス」が自分の場に出ていれば、このカードのパワーは300になる。"
+      },
+      "flavorText": {
+        "en": "Pirates are fun!",
+        "ja": "海賊は楽しいぜ!"
+      },
+      "image": "images/c34.png",
+      "sourceUrl": "https://grandlinewiki.net/tcg/hyperbattle/c34.html"
+    },
+    {
+      "id": "s01",
+      "cardType": "special",
+      "name": {
+        "en": "Luffy Pirates",
+        "ja": "ルフィ海賊団"
+      },
+      "title": {
+        "en": "Pirate's Party",
+        "ja": "海賊の宴"
+      },
+      "series": "One Piece Hyper Battle",
+      "set": "First Stage",
+      "released": "November, 1999",
+      "ruleSets": [
+        "EX Rule",
+        "Grand Rule"
+      ],
+      "marks": [
+        "Special"
+      ],
+      "types": [
+        "Special"
+      ],
+      "power": 700,
+      "description": {
+        "en": "In the Battle Phase, discard 2 cards from the deck. If you have “Luffy”, “Zoro”, or “Nami” on your field, this battle is lost.",
+        "ja": "バトルフェイズにおいて、山札からカードを2枚捨て札にする。自分の場に「ルフィ」「ゾロ」「ナミ」のどれかが出ていたら、この戦闘は敗北する。"
+      },
+      "flavorText": {
+        "en": "Let's Go, to the Grand Line!!",
+        "ja": "いくぞ、\"偉大なる航路（グランドライン）\"!!"
+      },
+      "image": "images/s01.png",
+      "sourceUrl": "https://grandlinewiki.net/tcg/hyperbattle/s01.html"
+    },
+    {
+      "id": "s02",
+      "cardType": "special",
+      "name": {
+        "en": "Luffy",
+        "ja": "ルフィ"
+      },
+      "title": {
+        "en": "Qualities of a Captain",
+        "ja": "船長の資質"
+      },
+      "series": "One Piece Hyper Battle",
+      "set": "First Stage",
+      "released": "November, 1999",
+      "ruleSets": [
+        "EX Rule",
+        "Grand Rule"
+      ],
+      "marks": [
+        "Special"
+      ],
+      "types": [
+        "Special"
+      ],
+      "power": 200,
+      "powerText": "200 &#8594; 500",
+      "description": {
+        "en": "If “Zoro”, “Nami”, “Usopp” or “Sanji” is on your field during the Battle Phase, this card's power becomes 500.",
+        "ja": "バトルフェイズにおいて「ゾロ」「ナミ」「ウソップ」「サンジ」のどれかが自分の場に出ていれば、このカードのパワーは500になる。"
+      },
+      "flavorText": {
+        "en": "Yo! Join my crew!",
+        "ja": "よっ! お前、仲間になってくれ!"
+      },
+      "image": "images/s02.png",
+      "sourceUrl": "https://grandlinewiki.net/tcg/hyperbattle/s02.html"
+    },
+    {
+      "id": "s03",
+      "cardType": "special",
+      "name": {
+        "en": "Gomu Gomu no Mi",
+        "ja": "ゴムゴムの実"
+      },
+      "title": {
+        "en": "Devil Fruit",
+        "ja": "悪魔の実"
+      },
+      "series": "One Piece Hyper Battle",
+      "set": "First Stage",
+      "released": "November, 1999",
+      "ruleSets": [
+        "EX Rule",
+        "Grand Rule"
+      ],
+      "marks": [
+        "Special"
+      ],
+      "types": [
+        "Special"
+      ],
+      "power": 250,
+      "powerText": "250 &#8594; 450",
+      "description": {
+        "en": "If “Luffy” is on the field during the Battle Phase, this card's power becomes 450.",
+        "ja": "バトルフェイズにおいて「ルフィ」が場に出ていたら、このカードのパワーは450になる。"
+      },
+      "flavorText": {
+        "en": "“The treasure of the sea called the Devil's Fruit.”",
+        "ja": "\"悪魔の実と呼ばれる海の秘宝\""
+      },
+      "image": "images/s03.png",
+      "sourceUrl": "https://grandlinewiki.net/tcg/hyperbattle/s03.html"
+    },
+    {
+      "id": "s04",
+      "cardType": "special",
+      "name": {
+        "en": "Zoro",
+        "ja": "ゾロ"
+      },
+      "title": {
+        "en": "Santōryū",
+        "ja": "三刀流"
+      },
+      "series": "One Piece Hyper Battle",
+      "set": "First Stage",
+      "released": "November, 1999",
+      "ruleSets": [
+        "EX Rule",
+        "Grand Rule"
+      ],
+      "marks": [
+        "Special"
+      ],
+      "types": [
+        "Special"
+      ],
+      "power": 300,
+      "powerText": "300 &#8594; –",
+      "description": {
+        "en": "Draw 3 cards from the deck. For each \"Zoro\", the power of this card is raised by 200 (0 cards → 300, 1 card → 500, 2 cards → 700, 3 cards → 900). Then discard those cards.",
+        "ja": "山札から3枚引き「ゾロ」を数える。その枚数でパワーが決まる(0枚→300、1枚→500、2枚→700、3枚→900) これらのカードは捨て札になる。"
+      },
+      "flavorText": {
+        "en": "All three are mine, I use Three Sword Style",
+        "ja": "三本ともおれのさ、三刀流なんでね"
+      },
+      "image": "images/s04.png",
+      "sourceUrl": "https://grandlinewiki.net/tcg/hyperbattle/s04.html"
+    },
+    {
+      "id": "s05",
+      "cardType": "special",
+      "name": {
+        "en": "Nami",
+        "ja": "ナミ"
+      },
+      "title": {
+        "en": "Pirate Thief",
+        "ja": "海賊専門の泥棒"
+      },
+      "series": "One Piece Hyper Battle",
+      "set": "First Stage",
+      "released": "November, 1999",
+      "ruleSets": [
+        "EX Rule",
+        "Grand Rule"
+      ],
+      "marks": [
+        "Special"
+      ],
+      "types": [
+        "Special"
+      ],
+      "power": 0,
+      "description": {
+        "en": "During Battle Phase, all (Special) cards on the field are discarded and have no effects. This card has priority over other (Special) cards.",
+        "ja": "バトルフェイズにおいて、場に出ているすべての(特珠)カードは効果が発揮されず捨て札になる。このカードは他の(特殊)カードよりも優先される。"
+      },
+      "flavorText": {
+        "en": "The treasure I stole from the pirates is mine!",
+        "ja": "海賊から盗んだ宝はわたしのものよ!"
+      },
+      "image": "images/s05.png",
+      "sourceUrl": "https://grandlinewiki.net/tcg/hyperbattle/s05.html"
+    },
+    {
+      "id": "s06",
+      "cardType": "special",
+      "name": {
+        "en": "Shanks",
+        "ja": "シャンクス"
+      },
+      "title": {
+        "en": "Hero's Lunch",
+        "ja": "勇者の昼食"
+      },
+      "series": "One Piece Hyper Battle",
+      "set": "First Stage",
+      "released": "November, 1999",
+      "ruleSets": [
+        "EX Rule",
+        "Grand Rule"
+      ],
+      "marks": [
+        "Special"
+      ],
+      "types": [
+        "Special"
+      ],
+      "power": 0,
+      "description": {
+        "en": "This battle ends in a draw regardless of power. You can only have up to 3 of this card in your deck.",
+        "ja": "この戦闘はパワーに関わらず引き分けになる。このカードはデッキに3枚までしか入れられない。"
+      },
+      "flavorText": {
+        "en": "Don't be upset, have some juice.",
+        "ja": "まあおこるな、ジュースでも飲め"
+      },
+      "image": "images/s06.png",
+      "sourceUrl": "https://grandlinewiki.net/tcg/hyperbattle/s06.html"
+    },
+    {
+      "id": "s07",
+      "cardType": "special",
+      "name": {
+        "en": "Morgan",
+        "ja": "モーガン"
+      },
+      "title": {
+        "en": "Captains Title",
+        "ja": "大佐の称号"
+      },
+      "series": "One Piece Hyper Battle",
+      "set": "First Stage",
+      "released": "November, 1999",
+      "ruleSets": [
+        "EX Rule",
+        "Grand Rule"
+      ],
+      "marks": [
+        "Special"
+      ],
+      "types": [
+        "Special"
+      ],
+      "power": 350,
+      "description": {
+        "en": "No special abilities.",
+        "ja": "特殊能力なし。"
+      },
+      "flavorText": {
+        "en": "Everything a great man does is right!!!",
+        "ja": "偉い人間がやる事は全て正しい!!"
+      },
+      "image": "images/s07.png",
+      "sourceUrl": "https://grandlinewiki.net/tcg/hyperbattle/s07.html"
+    },
+    {
+      "id": "s08",
+      "cardType": "special",
+      "name": {
+        "en": "Buggy",
+        "ja": "バギー"
+      },
+      "title": {
+        "en": "Bara Bara Festival",
+        "ja": "バラバラフェスティバル"
+      },
+      "series": "One Piece Hyper Battle",
+      "set": "First Stage",
+      "released": "November, 1999",
+      "ruleSets": [
+        "EX Rule",
+        "Grand Rule"
+      ],
+      "marks": [
+        "Special"
+      ],
+      "types": [
+        "Special"
+      ],
+      "power": 250,
+      "description": {
+        "en": "During the Lost Phase, this card is shuffled back into the deck instead of being discarded.",
+        "ja": "ロストフェイズにおいて、このカードは捨て札にする代わりに山札に戻す。美した後、山札はよく切る。"
+      },
+      "flavorText": {
+        "en": "You... Are you ready for this?",
+        "ja": "てめェ、覚悟はできてるんだろうな?"
+      },
+      "image": "images/s08.png",
+      "sourceUrl": "https://grandlinewiki.net/tcg/hyperbattle/s08.html"
+    }
+  ],
+  "scraped": "2026-05-05T06:39:55.306Z"
+}

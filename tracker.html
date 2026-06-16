@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HB Sale Tracker</title>
+<style>
+  :root { --bg: #0a0a0a; --card: #161616; --border: #2a2a2a; --text: #e0e0e0; --dim: #888; --accent: #f59e0b; --green: #22c55e; --red: #ef4444; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); padding: 20px; max-width: 900px; margin: 0 auto; }
+  h1 { font-size: 1.4rem; margin-bottom: 16px; color: var(--accent); }
+  h2 { font-size: 1.1rem; margin: 24px 0 12px; color: var(--dim); }
+
+  .input-row { display: flex; gap: 8px; margin-bottom: 12px; }
+  .input-row input[type="text"] { flex: 1; }
+  input, select, textarea { background: var(--card); border: 1px solid var(--border); color: var(--text); padding: 8px 12px; border-radius: 6px; font-size: 14px; }
+  input:focus, select:focus, textarea:focus { outline: none; border-color: var(--accent); }
+  textarea { width: 100%; resize: vertical; min-height: 40px; }
+
+  button { background: var(--accent); color: #000; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 14px; }
+  button:hover { opacity: 0.9; }
+  button:disabled { opacity: 0.4; cursor: not-allowed; }
+  button.secondary { background: var(--border); color: var(--text); }
+  button.danger { background: var(--red); color: #fff; font-size: 12px; padding: 4px 8px; }
+
+  .parsed-info { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; margin-bottom: 12px; }
+  .parsed-info .title { font-weight: 600; margin-bottom: 4px; }
+  .parsed-info .price { color: var(--green); font-size: 1.2rem; font-weight: 700; }
+  .parsed-info .item-id { color: var(--dim); font-size: 12px; }
+
+  .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 12px; margin-bottom: 12px; }
+  .form-grid label { font-size: 12px; color: var(--dim); margin-bottom: 2px; }
+  .form-group { display: flex; flex-direction: column; }
+
+  .grade-row { display: flex; gap: 6px; }
+  .grade-row label { display: flex; align-items: center; gap: 4px; background: var(--card); border: 1px solid var(--border); padding: 6px 12px; border-radius: 6px; cursor: pointer; font-size: 13px; color: var(--dim); }
+  .grade-row input[type="radio"] { display: none; }
+  .grade-row input[type="radio"]:checked + label { border-color: var(--accent); color: var(--accent); }
+
+  .status { padding: 8px 12px; border-radius: 6px; margin: 8px 0; font-size: 13px; display: none; }
+  .status.ok { display: block; background: #052e16; color: var(--green); }
+  .status.err { display: block; background: #2a0a0a; color: var(--red); }
+
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th { text-align: left; color: var(--dim); font-weight: 500; padding: 6px 8px; border-bottom: 1px solid var(--border); }
+  td { padding: 6px 8px; border-bottom: 1px solid var(--border); }
+  tr:hover td { background: #1a1a1a; }
+  .price-cell { color: var(--green); font-weight: 600; }
+  .card-cell { color: var(--accent); font-weight: 600; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .empty { color: var(--dim); text-align: center; padding: 24px; }
+</style>
+</head>
+<body>
+
+<h1>🏴‍☠️ HB First Stage — Sale Tracker</h1>
+
+<!-- URL Input -->
+<div class="input-row">
+  <input type="text" id="urlInput" placeholder="Paste Mercari URL..." />
+  <button id="parseBtn" onclick="parse()">Parse</button>
+</div>
+
+<!-- Parsed result -->
+<div id="parsedBox" class="parsed-info" style="display:none">
+  <div class="title" id="parsedTitle"></div>
+  <div class="price" id="parsedPrice"></div>
+  <div class="item-id" id="parsedId"></div>
+</div>
+
+<!-- Entry form (shown after parse) -->
+<div id="entryForm" style="display:none">
+  <div class="form-grid">
+    <div class="form-group">
+      <label>Card</label>
+      <select id="cardSelect"></select>
+    </div>
+    <div class="form-group">
+      <label>Sold Date</label>
+      <input type="date" id="soldDate" />
+    </div>
+  </div>
+
+  <div class="form-group" style="margin-bottom:8px">
+    <label style="font-size:12px;color:var(--dim);margin-bottom:4px">Grade</label>
+    <div class="grade-row">
+      <input type="radio" name="grade" id="gA" value="A"><label for="gA">A 美品</label>
+      <input type="radio" name="grade" id="gB" value="B" checked><label for="gB">B 並</label>
+      <input type="radio" name="grade" id="gC" value="C"><label for="gC">C 傷</label>
+      <input type="radio" name="grade" id="gD" value="D"><label for="gD">D ジャンク</label>
+    </div>
+  </div>
+
+  <div class="form-group" style="margin-bottom:12px">
+    <label style="font-size:12px;color:var(--dim);margin-bottom:4px">Notes</label>
+    <textarea id="notesInput" rows="1" placeholder="Optional notes..."></textarea>
+  </div>
+
+  <button onclick="save()">💾 Save</button>
+  <button class="secondary" onclick="reset()" style="margin-left:6px">Clear</button>
+</div>
+
+<div id="status" class="status"></div>
+
+<!-- Sales log -->
+<h2>📋 Logged Sales (<span id="salesCount">0</span>)</h2>
+<table>
+  <thead><tr><th>Card</th><th>Title</th><th>Price</th><th>Grade</th><th>Date</th><th></th></tr></thead>
+  <tbody id="salesBody"></tbody>
+</table>
+<div id="emptyMsg" class="empty">No sales logged yet</div>
+
+<script>
+const CARDS = [
+  {id:"c01",label:"C01 — ルフィ / 未来の海賊王"},
+  {id:"c02",label:"C02 — ルフィ / ゴムゴムの銃"},
+  {id:"c03",label:"C03 — ルフィ / ゴムゴムの鞭"},
+  {id:"c04",label:"C04 — ルフィ / 海賊への憧れ"},
+  {id:"c05",label:"C05 — ルフィの帽子 / 麦わら帽子"},
+  {id:"c06",label:"C06 — ゾロ / 格の違い"},
+  {id:"c07",label:"C07 — ゾロ / 鬼斬り"},
+  {id:"c08",label:"C08 — ゾロ / くいなへの誓い"},
+  {id:"c09",label:"C09 — ナミ / 小悪魔"},
+  {id:"c10",label:"C10 — ナミ / 危険察知"},
+  {id:"c11",label:"C11 — ナミ / 棒術"},
+  {id:"c12",label:"C12 — ウソップ / 鉛星"},
+  {id:"c13",label:"C13 — ウソップ / まきびし地獄"},
+  {id:"c14",label:"C14 — シャンクス / 気高き友情"},
+  {id:"c15",label:"C15 — ベックマン / 有能な副官"},
+  {id:"c16",label:"C16 — くいな / 剣士の資質"},
+  {id:"c17",label:"C17 — コビー / 夢は海軍"},
+  {id:"c18",label:"C18 — リカ / おにぎり"},
+  {id:"c19",label:"C19 — ブードル / 町への思い"},
+  {id:"c20",label:"C20 — シュシュ / 忠犬"},
+  {id:"c21",label:"C21 — アルビダ / キレイ好き"},
+  {id:"c22",label:"C22 — モーガン / 権力"},
+  {id:"c23",label:"C23 — ヘルメッポ / 空約束"},
+  {id:"c24",label:"C24 — バギー / 財宝への執念"},
+  {id:"c25",label:"C25 — バギー / バラバラ緊急脱出"},
+  {id:"c26",label:"C26 — バギー砲 / 大砲"},
+  {id:"c27",label:"C27 — モージ / 猛獣使い"},
+  {id:"c28",label:"C28 — リッチー / 獅子の猛攻"},
+  {id:"c29",label:"C29 — カバジ / カミカゼ百コマ劇場"},
+  {id:"c30",label:"C30 — 近海の主 / 竜の牙"},
+  {id:"c31",label:"C31 — アルビダ一家 / 女神への忠誠"},
+  {id:"c32",label:"C32 — モーガン部隊 / 絶対服従"},
+  {id:"c33",label:"C33 — バギー一味 / ハデな戦闘"},
+  {id:"c34",label:"C34 — 赤髭海賊団 / 海の勇者たち"},
+  {id:"s01",label:"S01 — ルフィ海賊団 / 海賊の宴"},
+  {id:"s02",label:"S02 — ルフィ / 船長の資質"},
+  {id:"s03",label:"S03 — ゴムゴムの実 / 悪魔の実"},
+  {id:"s04",label:"S04 — ゾロ / 三刀流"},
+  {id:"s05",label:"S05 — ナミ / 海賊専門の泥棒"},
+  {id:"s06",label:"S06 — シャンクス / 勇者の昼食"},
+  {id:"s07",label:"S07 — モーガン / 大佐の称号"},
+  {id:"s08",label:"S08 — バギー / バラバラフェスティバル"},
+];
+
+let parsed = null;
+
+// Init
+const sel = document.getElementById('cardSelect');
+CARDS.forEach(c => { const o = document.createElement('option'); o.value = c.id; o.textContent = c.label; sel.appendChild(o); });
+document.getElementById('soldDate').value = new Date().toISOString().slice(0,10);
+loadSales();
+
+async function parse() {
+  const url = document.getElementById('urlInput').value.trim();
+  if (!url) return;
+  const btn = document.getElementById('parseBtn');
+  btn.disabled = true; btn.textContent = '...';
+  showStatus('');
+  try {
+    const r = await fetch('/parse', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({url}) });
+    const d = await r.json();
+    if (r.status === 409) throw new Error('⚠️ This listing is already logged');
+    if (!r.ok) throw new Error(d.error);
+    parsed = d;
+    document.getElementById('parsedTitle').textContent = d.title;
+    document.getElementById('parsedPrice').textContent = d.price_jpy ? `¥${d.price_jpy.toLocaleString()}` : 'Price not found';
+    document.getElementById('parsedId').textContent = d.item_id;
+    document.getElementById('parsedBox').style.display = 'block';
+    document.getElementById('entryForm').style.display = 'block';
+
+    // Try to auto-select card from title
+    const t = (d.title || '').toUpperCase();
+    for (const c of CARDS) {
+      const cid = c.id.toUpperCase();
+      if (t.includes(cid) || t.includes(cid.replace('C0','C').replace('S0','S'))) {
+        sel.value = c.id; break;
+      }
+    }
+  } catch(e) {
+    showStatus(e.message, true);
+  }
+  btn.disabled = false; btn.textContent = 'Parse';
+}
+
+async function save() {
+  if (!parsed) return;
+  const grade = document.querySelector('input[name="grade"]:checked')?.value || 'B';
+  const body = {
+    item_id: parsed.item_id,
+    title: parsed.title,
+    price_jpy: parsed.price_jpy,
+    card_id: document.getElementById('cardSelect').value,
+    grade,
+    sold_date: document.getElementById('soldDate').value,
+    notes: document.getElementById('notesInput').value.trim()
+  };
+  try {
+    const r = await fetch('/save', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(body) });
+    const d = await r.json();
+    if (!r.ok) throw new Error(d.error);
+    showStatus('Saved ✓', false);
+    reset();
+    loadSales();
+  } catch(e) {
+    showStatus(e.message, true);
+  }
+}
+
+function reset() {
+  parsed = null;
+  document.getElementById('urlInput').value = '';
+  document.getElementById('parsedBox').style.display = 'none';
+  document.getElementById('entryForm').style.display = 'none';
+  document.getElementById('notesInput').value = '';
+  document.getElementById('soldDate').value = new Date().toISOString().slice(0,10);
+}
+
+async function loadSales() {
+  const r = await fetch('/sales');
+  const sales = await r.json();
+  const body = document.getElementById('salesBody');
+  const empty = document.getElementById('emptyMsg');
+  document.getElementById('salesCount').textContent = sales.length;
+  if (!sales.length) { body.innerHTML = ''; empty.style.display = 'block'; return; }
+  empty.style.display = 'none';
+  // newest first
+  sales.sort((a,b) => b.logged_at.localeCompare(a.logged_at));
+  body.innerHTML = sales.map(s => `<tr>
+    <td class="card-cell">${s.card_id.toUpperCase()}</td>
+    <td><a href="https://jp.mercari.com/item/${s.item_id}" target="_blank">${esc(s.title).slice(0,50)}</a></td>
+    <td class="price-cell">${s.price_display || '—'}</td>
+    <td>${s.grade}</td>
+    <td>${s.sold_date}</td>
+    <td><button class="danger" onclick="del('${s.item_id}')">×</button></td>
+  </tr>`).join('');
+}
+
+async function del(id) {
+  if (!confirm('Delete this entry?')) return;
+  await fetch('/sales/' + id, { method: 'DELETE' });
+  loadSales();
+}
+
+function showStatus(msg, isErr) {
+  const el = document.getElementById('status');
+  el.className = 'status' + (msg ? (isErr ? ' err' : ' ok') : '');
+  el.textContent = msg;
+}
+
+function esc(s) { const d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
+</script>
+</body>
+</html>
