@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hyper Battle First Stage — Discovery</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,sans-serif;background:#1a1a2e;color:#e0e0e0;padding:20px}
+h1{text-align:center;margin-bottom:8px;color:#fff;font-size:1.4em}
+.subtitle{text-align:center;color:#888;margin-bottom:20px;font-size:.85em}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px;max-width:1200px;margin:0 auto}
+.card{background:#16213e;border-radius:8px;padding:10px;text-align:center;transition:transform .15s}
+.card:hover{background:#1a2744}
+.card .id{font-size:.7em;color:#4cc9f0;font-weight:bold;text-transform:uppercase}
+.card .name{font-size:.85em;font-weight:600;margin:2px 0}
+.card .title{font-size:.75em;color:#aaa;margin-bottom:6px}
+.card .links{display:flex;flex-wrap:wrap;gap:4px;justify-content:center}
+.card a{display:inline-block;color:#fff;text-decoration:none;font-size:.65em;padding:3px 7px;border-radius:4px;font-weight:600}
+.card a.primary{background:#e63946}
+.card a.primary:hover{background:#c1121f}
+.card a.alt{background:#2d6a4f}
+.card a.alt:hover{background:#40916c}
+.card .link-row{display:flex;flex-wrap:wrap;gap:4px;justify-content:center;margin-bottom:3px}
+.card .row-label{font-size:.55em;color:#888;text-transform:uppercase;letter-spacing:.5px;margin-top:4px}
+.card a.sale{background:#b5651d}
+.card a.sale:hover{background:#d4820f}
+.legend{max-width:1200px;margin:0 auto 16px;padding:10px 14px;background:#16213e;border-radius:8px;font-size:.75em;color:#aaa;display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center}
+.legend strong{color:#e0e0e0}
+.legend b{color:#e0e0e0}
+.dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:3px;vertical-align:middle}
+.section{max-width:1200px;margin:0 auto 12px;color:#4cc9f0;font-size:.95em;font-weight:600;border-bottom:1px solid #333;padding-bottom:4px}
+</style>
+</head>
+<body>
+<h1>🏴‍☠️ Hyper Battle First Stage</h1>
+<p class="subtitle">Mercari Japan — Sold & Active Listings Quick Links</p>
+<div class="legend">
+  <strong>Search Terms Used:</strong>
+  <span><b>Full</b> = カードダス ハイパーバトル + Name + Title</span>
+  <span><b>HB+ID</b> = ハイパーバトル + Card ID</span>
+  <span><b>OP+ID</b> = ワンピース + Card ID</span>
+  <span><b>Name+Title</b> = Character Name + Title (JP)</span>
+  <span><b>HB+Name</b> = ハイパーバトル + Character Name</span>
+
+</div>
+<div id="app"></div>
+<script>
+const CARDS=[{"id":"c01","ne":"Luffy","nj":"ルフィ","tj":"未来の海賊王","te":"Future Pirate King"},{"id":"c02","ne":"Luffy","nj":"ルフィ","tj":"ゴムゴムの銃","te":"Gum-Gum Pistol"},{"id":"c03","ne":"Luffy","nj":"ルフィ","tj":"ゴムゴムの鞭","te":"Gum-Gum Whip"},{"id":"c04","ne":"Luffy","nj":"ルフィ","tj":"海賊への憧れ","te":"Longing for Pirates"},{"id":"c05","ne":"Luffy's Hat","nj":"ルフィの帽子","tj":"麦わら帽子","te":"Straw Hat"},{"id":"c06","ne":"Zoro","nj":"ゾロ","tj":"格の違い","te":"A Cut Above"},{"id":"c07","ne":"Zoro","nj":"ゾロ","tj":"鬼斬り","te":"Oni Giri"},{"id":"c08","ne":"Zoro","nj":"ゾロ","tj":"くいなへの誓い","te":"Vow to Kuina"},{"id":"c09","ne":"Nami","nj":"ナミ","tj":"小悪魔","te":"Little Devil"},{"id":"c10","ne":"Nami","nj":"ナミ","tj":"危険察知","te":"Danger Sense"},{"id":"c11","ne":"Nami","nj":"ナミ","tj":"棒術","te":"Bō Staff"},{"id":"c12","ne":"Usopp","nj":"ウソップ","tj":"鉛星","te":"Lead Star"},{"id":"c13","ne":"Usopp","nj":"ウソップ","tj":"まきびし地獄","te":"Caltrops Hell"},{"id":"c14","ne":"Shanks","nj":"シャンクス","tj":"気高き友情","te":"Noble Friendship"},{"id":"c15","ne":"Beckman","nj":"ベックマン","tj":"有能な副官","te":"Capable First Mate"},{"id":"c16","ne":"Kuina","nj":"くいな","tj":"剣士の資質","te":"Swordsman's Talent"},{"id":"c17","ne":"Koby","nj":"コビー","tj":"夢は海軍","te":"Dream of the Marines"},{"id":"c18","ne":"Rika","nj":"リカ","tj":"おにぎり","te":"Rice Balls"},{"id":"c19","ne":"Boodle","nj":"ブードル","tj":"町への思い","te":"Love for the Town"},{"id":"c20","ne":"Chouchou","nj":"シュシュ","tj":"忠犬","te":"Loyal Dog"},{"id":"c21","ne":"Alvida","nj":"アルビダ","tj":"キレイ好き","te":"Beauty Obsessed"},{"id":"c22","ne":"Morgan","nj":"モーガン","tj":"権力","te":"Authority"},{"id":"c23","ne":"Helmeppo","nj":"ヘルメッポ","tj":"空約束","te":"Empty Promise"},{"id":"c24","ne":"Buggy","nj":"バギー","tj":"財宝への執念","te":"Obsession with Treasure"},{"id":"c25","ne":"Buggy","nj":"バギー","tj":"バラバラ緊急脱出","te":"Bara Bara Emergency Escape"},{"id":"c26","ne":"Buggy Cannon","nj":"バギー砲","tj":"大砲","te":"Cannon"},{"id":"c27","ne":"Mohji","nj":"モージ","tj":"猛獣使い","te":"Beast Tamer"},{"id":"c28","ne":"Richie","nj":"リッチー","tj":"獅子の猛攻","te":"Lion's Fury"},{"id":"c29","ne":"Cabaji","nj":"カバジ","tj":"カミカゼ百コマ劇場","te":"Kamikaze 100-Top Circus"},{"id":"c30","ne":"Lord of the Coast","nj":"近海の主","tj":"竜の牙","te":"Dragon's Fang"},{"id":"c31","ne":"Alvida Crew","nj":"アルビダ一家","tj":"女神への忠誠","te":"Loyalty to the Goddess"},{"id":"c32","ne":"Morgan Troops","nj":"モーガン部隊","tj":"絶対服従","te":"Absolute Obedience"},{"id":"c33","ne":"Buggy Crew","nj":"バギー一味","tj":"ハデな戦闘","te":"Flashy Battle"},{"id":"c34","ne":"Red Hair Pirates","nj":"赤髭海賊団","tj":"海の勇者たち","te":"Heroes of the Sea"},{"id":"s01","ne":"Luffy Pirates","nj":"ルフィ海賊団","tj":"海賊の宴","te":"Pirate Banquet"},{"id":"s02","ne":"Luffy","nj":"ルフィ","tj":"船長の資質","te":"Captain's Qualities"},{"id":"s03","ne":"Gomu Gomu no Mi","nj":"ゴムゴムの実","tj":"悪魔の実","te":"Devil Fruit"},{"id":"s04","ne":"Zoro","nj":"ゾロ","tj":"三刀流","te":"Three-Sword Style"},{"id":"s05","ne":"Nami","nj":"ナミ","tj":"海賊専門の泥棒","te":"Pirate-Specialist Thief"},{"id":"s06","ne":"Shanks","nj":"シャンクス","tj":"勇者の昼食","te":"Hero's Lunch"},{"id":"s07","ne":"Morgan","nj":"モーガン","tj":"大佐の称号","te":"Title of Captain"},{"id":"s08","ne":"Buggy","nj":"バギー","tj":"バラバラフェスティバル","te":"Bara Bara Festival"}];
+
+function m(kw,status){
+  return `https://jp.mercari.com/search?keyword=${encodeURIComponent(kw)}&status=${status}&order=desc&sort=created_time`;
+}
+
+function links(c){
+  const id=c.id.toUpperCase();
+  const searches=[
+    {label:'Full',kw:`カードダス ハイパーバトル ${c.nj} ${c.tj}`},
+    {label:'HB+ID',kw:`ハイパーバトル ${id}`},
+    {label:'OP+ID',kw:`ワンピース ${id}`},
+    {label:'Name+Title',kw:`${c.nj} ${c.tj}`},
+    {label:'HB+Name',kw:`ハイパーバトル ${c.nj}`},
+  ];
+  const soldRow = searches.map(s=>`<a class="primary" href="${m(s.kw,'sold_out')}" target="_blank" title="${s.kw}">${s.label}</a>`).join('');
+  const activeRow = searches.map(s=>`<a class="sale" href="${m(s.kw,'on_sale')}" target="_blank" title="${s.kw}">${s.label}</a>`).join('');
+  return `<div class="row-label">Sold</div><div class="link-row">${soldRow}</div><div class="row-label">For Sale</div><div class="link-row">${activeRow}</div>`;
+}
+
+function render(label,list){
+  return `<div class="section">${label}</div><div class="grid">${list.map(c=>`<div class="card">
+    <div class="id">${c.id.toUpperCase()}</div>
+    <div class="name">${c.ne}</div>
+    <div class="title">${c.tj}</div>
+    <div class="title" style="color:#ccc;font-style:italic">${c.te}</div>
+    <div class="links">${links(c)}</div>
+  </div>`).join('')}</div>`;
+}
+
+document.getElementById('app').innerHTML =
+  render('Character Cards (C01–C34)', CARDS.filter(c=>c.id.startsWith('c'))) +
+  render('Special Cards (S01–S08)', CARDS.filter(c=>c.id.startsWith('s')));
+</script>
+</body>
+</html>
