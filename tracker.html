@@ -163,6 +163,7 @@ let parsed = null;
 const sel = document.getElementById('cardSelect');
 CARDS.forEach(c => { const o = document.createElement('option'); o.value = c.id; o.textContent = c.label; sel.appendChild(o); });
 document.getElementById('soldDate').value = new Date().toISOString().slice(0,10);
+document.getElementById('soldDate').addEventListener('click', function() { this.showPicker(); });
 loadSales();
 
 async function parse() {
