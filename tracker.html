@@ -15,7 +15,8 @@
   .input-row input[type="text"] { flex: 1; }
   input, select, textarea { background: var(--card); border: 1px solid var(--border); color: var(--text); padding: 8px 12px; border-radius: 6px; font-size: 14px; }
   input:focus, select:focus, textarea:focus { outline: none; border-color: var(--accent); }
-  input[type="date"] { background: #1a2a1a; border-color: var(--green); }
+  input[type="date"] { background: #1a2a1a; border-color: var(--green); text-align: right; }
+  input[type="date"]::-webkit-calendar-picker-indicator { float: right; }
   select.selected { border-color: #444; }
   textarea { width: 100%; resize: vertical; min-height: 40px; }
 
