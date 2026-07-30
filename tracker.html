@@ -106,12 +106,12 @@
   </div>
 
   <div class="form-group" style="margin-bottom:12px">
-    <label style="font-size:12px;color:var(--dim);margin-bottom:4px">Notes</label>
-    <textarea id="notesInput" rows="1" placeholder="Optional notes..."></textarea>
+    <label style="font-size:12px;color:var(--dim);margin-bottom:4px;cursor:pointer" onclick="toggleNotes()">Notes ▸</label>
+    <textarea id="notesInput" rows="1" placeholder="Optional notes..." style="display:none"></textarea>
   </div>
 
   <button onclick="save()" style="width:100%;margin-bottom:6px">💾 Save</button>
-  <button class="secondary" onclick="reset()" style="width:100%">Clear</button>
+  <button class="secondary" onclick="reset()" style="width:50%;font-size:12px;padding:4px 8px">Clear</button>
 </div>
 
 <div id="status" class="status"></div>
@@ -125,6 +125,11 @@
 <div id="emptyMsg" class="empty">No sales logged yet</div>
 
 <script>
+function toggleNotes() {
+  const el = document.getElementById('notesInput');
+  el.style.display = el.style.display === 'none' ? 'block' : 'none';
+}
+
 let CARDS = [];
 let CARDS_DATA = {};
 let parsed = null;
