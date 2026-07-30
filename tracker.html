@@ -59,7 +59,7 @@
 <!-- URL Input -->
 <div class="input-row">
   <input type="text" id="urlInput" placeholder="Paste Mercari URL..." />
-  <button id="parseBtn" onclick="parse()">Parse</button>
+  <button onclick="pasteAndParse()">📋 Paste & Parse</button>
 </div>
 
 <!-- Parsed result -->
@@ -73,13 +73,17 @@
 <div id="entryForm" style="display:none">
   <div class="form-grid">
     <div class="form-group">
-      <label>Card</label>
-      <select id="cardSelect"></select>
+      <label>First Stage (42)</label>
+      <select id="cardSelect1"></select>
     </div>
     <div class="form-group">
-      <label>Sold Date</label>
-      <input type="date" id="soldDate" />
+      <label>Other Sets</label>
+      <select id="cardSelect2"></select>
     </div>
+  </div>
+  <div class="form-group" style="margin-bottom:8px">
+    <label>Sold Date</label>
+    <input type="date" id="soldDate" />
   </div>
 
   <div class="form-group" style="margin-bottom:8px">
@@ -112,65 +116,75 @@
 <div id="emptyMsg" class="empty">No sales logged yet</div>
 
 <script>
-const CARDS = [
-  {id:"c01",label:"C01 — ルフィ / 未来の海賊王"},
-  {id:"c02",label:"C02 — ルフィ / ゴムゴムの銃"},
-  {id:"c03",label:"C03 — ルフィ / ゴムゴムの鞭"},
-  {id:"c04",label:"C04 — ルフィ / 海賊への憧れ"},
-  {id:"c05",label:"C05 — ルフィの帽子 / 麦わら帽子"},
-  {id:"c06",label:"C06 — ゾロ / 格の違い"},
-  {id:"c07",label:"C07 — ゾロ / 鬼斬り"},
-  {id:"c08",label:"C08 — ゾロ / くいなへの誓い"},
-  {id:"c09",label:"C09 — ナミ / 小悪魔"},
-  {id:"c10",label:"C10 — ナミ / 危険察知"},
-  {id:"c11",label:"C11 — ナミ / 棒術"},
-  {id:"c12",label:"C12 — ウソップ / 鉛星"},
-  {id:"c13",label:"C13 — ウソップ / まきびし地獄"},
-  {id:"c14",label:"C14 — シャンクス / 気高き友情"},
-  {id:"c15",label:"C15 — ベックマン / 有能な副官"},
-  {id:"c16",label:"C16 — くいな / 剣士の資質"},
-  {id:"c17",label:"C17 — コビー / 夢は海軍"},
-  {id:"c18",label:"C18 — リカ / おにぎり"},
-  {id:"c19",label:"C19 — ブードル / 町への思い"},
-  {id:"c20",label:"C20 — シュシュ / 忠犬"},
-  {id:"c21",label:"C21 — アルビダ / キレイ好き"},
-  {id:"c22",label:"C22 — モーガン / 権力"},
-  {id:"c23",label:"C23 — ヘルメッポ / 空約束"},
-  {id:"c24",label:"C24 — バギー / 財宝への執念"},
-  {id:"c25",label:"C25 — バギー / バラバラ緊急脱出"},
-  {id:"c26",label:"C26 — バギー砲 / 大砲"},
-  {id:"c27",label:"C27 — モージ / 猛獣使い"},
-  {id:"c28",label:"C28 — リッチー / 獅子の猛攻"},
-  {id:"c29",label:"C29 — カバジ / カミカゼ百コマ劇場"},
-  {id:"c30",label:"C30 — 近海の主 / 竜の牙"},
-  {id:"c31",label:"C31 — アルビダ一家 / 女神への忠誠"},
-  {id:"c32",label:"C32 — モーガン部隊 / 絶対服従"},
-  {id:"c33",label:"C33 — バギー一味 / ハデな戦闘"},
-  {id:"c34",label:"C34 — 赤髭海賊団 / 海の勇者たち"},
-  {id:"s01",label:"S01 — ルフィ海賊団 / 海賊の宴"},
-  {id:"s02",label:"S02 — ルフィ / 船長の資質"},
-  {id:"s03",label:"S03 — ゴムゴムの実 / 悪魔の実"},
-  {id:"s04",label:"S04 — ゾロ / 三刀流"},
-  {id:"s05",label:"S05 — ナミ / 海賊専門の泥棒"},
-  {id:"s06",label:"S06 — シャンクス / 勇者の昼食"},
-  {id:"s07",label:"S07 — モーガン / 大佐の称号"},
-  {id:"s08",label:"S08 — バギー / バラバラフェスティバル"},
-];
-
+let CARDS = [];
+let CARDS_DATA = {};
 let parsed = null;
 
-// Init
-const sel = document.getElementById('cardSelect');
-CARDS.forEach(c => { const o = document.createElement('option'); o.value = c.id; o.textContent = c.label; sel.appendChild(o); });
+// Init - fetch cards.json and build two dropdowns
+const sel1 = document.getElementById('cardSelect1');
+const sel2 = document.getElementById('cardSelect2');
+(async () => {
+  try {
+    const r = await fetch('cards.json');
+    const data = await r.json();
+    const cards = data.cards || data;
+    const cardList = Array.isArray(cards) ? cards : Object.values(cards);
+    cardList.sort((a, b) => a.id.localeCompare(b.id));
+    
+    // Split into First Stage and Other Sets
+    const firstStage = cardList.filter(c => c.set === 'First Stage');
+    const otherSets = cardList.filter(c => c.set !== 'First Stage');
+    
+    // Helper to build dropdown
+    const buildDropdown = (sel, cards) => {
+      // Add blank placeholder
+      const placeholder = document.createElement('option');
+      placeholder.value = '';
+      placeholder.textContent = '— select —';
+      sel.appendChild(placeholder);
+      
+      cards.forEach(c => {
+        const name = c.name?.en || c.name?.ja || '';
+        const title = c.title?.en || c.title?.ja || '';
+        const label = `${c.id.toUpperCase()} — ${name}${title ? ' / ' + title : ''}`;
+        CARDS.push({ id: c.id, label });
+        CARDS_DATA[c.id] = c; // store full card data for matching
+        const o = document.createElement('option');
+        o.value = c.id;
+        o.textContent = label;
+        sel.appendChild(o);
+      });
+    };
+    
+    buildDropdown(sel1, firstStage);
+    buildDropdown(sel2, otherSets);
+  } catch (e) {
+    console.error('Failed to load cards.json:', e);
+  }
+})();
+
+// Clear other dropdown when one is selected
+sel1.addEventListener('change', () => { if (sel1.value) sel2.value = ''; });
+sel2.addEventListener('change', () => { if (sel2.value) sel1.value = ''; });
 document.getElementById('soldDate').value = new Date().toISOString().slice(0,10);
 document.getElementById('soldDate').addEventListener('click', function() { this.showPicker(); });
 loadSales();
 
+async function pasteAndParse() {
+  const urlInput = document.getElementById('urlInput');
+  urlInput.value = '';
+  try {
+    const text = await navigator.clipboard.readText();
+    urlInput.value = text.trim();
+    parse();
+  } catch (e) {
+    urlInput.focus();
+  }
+}
+
 async function parse() {
   const url = document.getElementById('urlInput').value.trim();
   if (!url) return;
-  const btn = document.getElementById('parseBtn');
-  btn.disabled = true; btn.textContent = '...';
   showStatus('');
   try {
     const r = await fetch('/parse', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({url}) });
@@ -184,18 +198,47 @@ async function parse() {
     document.getElementById('parsedBox').style.display = 'block';
     document.getElementById('entryForm').style.display = 'block';
 
-    // Try to auto-select card from title
-    const t = (d.title || '').toUpperCase();
-    for (const c of CARDS) {
-      const cid = c.id.toUpperCase();
-      if (t.includes(cid) || t.includes(cid.replace('C0','C').replace('S0','S'))) {
-        sel.value = c.id; break;
+    // Auto-select card from title (ID first, then title match)
+    const t = d.title || '';
+    let matchedId = null;
+    
+    // Phase 1: Try to extract ID from brackets/parens
+    const idMatch = t.match(/[【\(\[]([CS]\d{1,3})[^\)\]】]/i);
+    if (idMatch) {
+      matchedId = idMatch[1].toLowerCase().replace(/^([cs])0*/, '$1'); // normalize C370, c370, C0370 → c370
+    }
+    
+    // Phase 2: If no ID, try matching card titles
+    if (!matchedId) {
+      const titleLower = t.toLowerCase();
+      for (const c of CARDS) {
+        const card = CARDS_DATA[c.id];
+        if (!card) continue;
+        const jaTitle = card.title?.ja || '';
+        const enTitle = (card.title?.en || '').toLowerCase();
+        // Check if card title appears in listing title
+        if (jaTitle && t.includes(jaTitle)) {
+          matchedId = c.id; break;
+        }
+        if (enTitle && titleLower.includes(enTitle) && enTitle.length > 3) {
+          matchedId = c.id; break;
+        }
+      }
+    }
+    
+    // Apply match to dropdowns (clear the other one)
+    if (matchedId) {
+      if (sel1.querySelector(`option[value="${matchedId}"]`)) {
+        sel1.value = matchedId;
+        sel2.value = '';
+      } else if (sel2.querySelector(`option[value="${matchedId}"]`)) {
+        sel2.value = matchedId;
+        sel1.value = '';
       }
     }
   } catch(e) {
     showStatus(e.message, true);
   }
-  btn.disabled = false; btn.textContent = 'Parse';
 }
 
 async function save() {
@@ -205,7 +248,7 @@ async function save() {
     item_id: parsed.item_id,
     title: parsed.title,
     price_jpy: parsed.price_jpy,
-    card_id: document.getElementById('cardSelect').value,
+    card_id: document.getElementById('cardSelect1').value || document.getElementById('cardSelect2').value,
     grade,
     sold_date: document.getElementById('soldDate').value,
     notes: document.getElementById('notesInput').value.trim()
@@ -229,6 +272,8 @@ function reset() {
   document.getElementById('entryForm').style.display = 'none';
   document.getElementById('notesInput').value = '';
   document.getElementById('soldDate').value = new Date().toISOString().slice(0,10);
+  document.getElementById('cardSelect1').value = '';
+  document.getElementById('cardSelect2').value = '';
 }
 
 async function loadSales() {
