@@ -150,6 +150,19 @@ const sel2 = document.getElementById('cardSelect2');
     const firstStage = cardList.filter(c => c.set === 'First Stage');
     const otherSets = cardList.filter(c => c.set !== 'First Stage');
     
+    // Sort Other Sets: c before s, padded numeric IDs
+    const padId = id => {
+      const match = id.match(/^([a-z]+)(\d+)$/i);
+      return match ? match[1] + match[2].padStart(4, '0') : id;
+    };
+    otherSets.sort((a, b) => padId(a.id).localeCompare(padId(b.id)));
+    // Also sort c before s
+    otherSets.sort((a, b) => {
+      const aPrefix = a.id.startsWith('c') ? 0 : a.id.startsWith('s') ? 1 : 2;
+      const bPrefix = b.id.startsWith('c') ? 0 : b.id.startsWith('s') ? 1 : 2;
+      return aPrefix - bPrefix || padId(a.id).localeCompare(padId(b.id));
+    });
+    
     // Helper to build dropdown
     const buildDropdown = (sel, cards) => {
       // Add blank placeholder
