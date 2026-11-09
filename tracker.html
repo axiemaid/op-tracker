@@ -49,6 +49,12 @@
   .grade-row input[type="radio"][value="C"]:checked + label { background: #f97316; border-color: #f97316; }
   .grade-row input[type="radio"][value="D"]:checked + label { background: var(--red); border-color: var(--red); }
 
+  .error-print-toggle { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; }
+  .error-print-toggle input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--red); cursor: pointer; }
+  .error-print-toggle label { font-size: 14px; color: var(--text); cursor: pointer; user-select: none; display: flex; align-items: center; gap: 4px; }
+  .error-print-toggle .kanji { font-size: 18px; color: var(--red); font-weight: 700; }
+  .err-badge { display: inline-block; background: rgba(239,68,68,0.2); color: var(--red); font-size: 11px; font-weight: 700; padding: 1px 5px; border-radius: 4px; margin-left: 4px; }
+
   .status { padding: 8px 12px; border-radius: 6px; margin: 8px 0; font-size: 13px; display: none; }
   .status.ok { display: block; background: #052e16; color: var(--green); }
   .status.err { display: block; background: #2a0a0a; color: var(--red); }
@@ -104,6 +110,11 @@
       <input type="radio" name="grade" id="gC" value="C"><label for="gC">C</label>
       <input type="radio" name="grade" id="gD" value="D"><label for="gD">D</label>
     </div>
+  </div>
+
+  <div class="error-print-toggle">
+    <input type="checkbox" id="errorPrintCheckbox">
+    <label for="errorPrintCheckbox">Error Print <span class="kanji">朗</span></label>
   </div>
 
   <div class="form-group" style="margin-bottom:12px">
@@ -298,7 +309,8 @@ async function save() {
     card_id: document.getElementById('cardSelect1').value || document.getElementById('cardSelect2').value,
     grade,
     sold_date: document.getElementById('soldDate').value,
-    notes: document.getElementById('notesInput').value.trim()
+    notes: document.getElementById('notesInput').value.trim(),
+    error_print: document.getElementById('errorPrintCheckbox').checked
   };
   try {
     const r = await fetch('/save', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(body) });
@@ -318,6 +330,7 @@ function reset() {
   document.getElementById('parsedBox').style.display = 'none';
   document.getElementById('entryForm').style.display = 'none';
   document.getElementById('notesInput').value = '';
+  document.getElementById('errorPrintCheckbox').checked = false;
   document.getElementById('soldDate').value = new Date().toISOString().slice(0,10);
   document.getElementById('cardSelect1').value = '';
   document.getElementById('cardSelect2').value = '';
@@ -339,7 +352,7 @@ async function loadSales() {
     <td class="card-cell">${s.card_id.toUpperCase()}</td>
     <td><a href="https://jp.mercari.com/item/${s.item_id}" target="_blank">${esc(s.title).slice(0,50)}</a></td>
     <td class="price-cell">${s.price_display || '—'}</td>
-    <td>${s.grade}</td>
+    <td>${s.grade}${s.error_print ? '<span class="err-badge">朗</span>' : ''}</td>
     <td>${s.sold_date}</td>
     <td><button class="danger" onclick="del('${s.item_id}')">×</button></td>
   </tr>`).join('');

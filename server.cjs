@@ -6,11 +6,27 @@ const { execSync } = require('child_process');
 const app = express();
 app.use(express.json());
 
-const SALES_FILE = path.join(__dirname, 'sales.json');
-const PORT = 3010;
+// Serve static files but don't serve index.html automatically
+app.use(express.static(__dirname, { index: false, etag: false, lastModified: false, maxAge: 0 }));
 
-// Serve tracker.html
+// Explicit cards.json route (bypass static caching)
+app.get('/cards.json', (req, res) => {
+  res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
+  res.sendFile('cards.json', { root: __dirname });
+});
+
+// Serve tracker.html at root
 app.get('/', (req, res) => res.sendFile('tracker.html', { root: __dirname }));
+
+// CORS for local extension access
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  next();
+});
+
+const SALES_FILE = path.join(__dirname, 'sales.json');
+const EXCLUDED_FILE = path.join(__dirname, 'excluded.json');
+const PORT = 3010;
 
 // Parse a Mercari URL — extract title + price from SSR meta tags
 app.post('/parse', (req, res) => {
@@ -51,7 +67,7 @@ app.post('/parse', (req, res) => {
 
 // Save a sale record
 app.post('/save', (req, res) => {
-  const { item_id, title, price_jpy, card_id, grade, notes, sold_date } = req.body;
+  const { item_id, title, price_jpy, card_id, grade, notes, sold_date, error_print } = req.body;
   if (!item_id || !card_id) return res.status(400).json({ error: 'item_id and card_id required' });
 
   let sales = [];
@@ -70,6 +86,7 @@ app.post('/save', (req, res) => {
     card_id: card_id.toLowerCase(),
     grade: grade || '',
     notes: notes || '',
+    error_print: !!error_print,
     logged_at: new Date().toISOString()
   };
 
@@ -86,6 +103,40 @@ app.get('/sales', (req, res) => {
   } catch {
     res.json([]);
   }
+});
+
+// Get all excluded
+app.get('/excluded', (req, res) => {
+  try {
+    const excluded = JSON.parse(fs.readFileSync(EXCLUDED_FILE, 'utf8'));
+    res.json(excluded);
+  } catch {
+    res.json([]);
+  }
+});
+
+// Toggle exclude status
+app.post('/exclude', (req, res) => {
+  const { item_id, title, action } = req.body;
+  if (!item_id) return res.status(400).json({ error: 'item_id required' });
+
+  let excluded = [];
+  try { excluded = JSON.parse(fs.readFileSync(EXCLUDED_FILE, 'utf8')); } catch {}
+
+  if (action === 'add') {
+    if (!excluded.find(e => e.item_id === item_id)) {
+      excluded.push({
+        item_id,
+        title: title || '',
+        excluded_at: new Date().toISOString()
+      });
+    }
+  } else if (action === 'remove') {
+    excluded = excluded.filter(e => e.item_id !== item_id);
+  }
+
+  fs.writeFileSync(EXCLUDED_FILE, JSON.stringify(excluded, null, 2));
+  res.json({ ok: true, excluded });
 });
 
 // Delete a sale
